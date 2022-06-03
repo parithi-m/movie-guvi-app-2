@@ -1,7 +1,9 @@
 .App {
   text-align: center;
-  align-items: center;
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
 }
 
 /* .poster{
@@ -16,15 +18,23 @@ img{
   width:350px;
   object-fit: cover;
   transition: 0.2s;
+  padding: 20px;
 }
 img:hover{
   transform: scale(1.1);
 }
 .moviebox{
+  width: 400px;
   /* background-color: rgb(250, 195, 195); */
 }
+.moviespecs{
+  
+  align-items: center;
+  justify-content: space-between;
+
+}
 .moviename{
-  font-size: 30px;
+  font-size: 25px;
   margin: 0;
 }
 .ratings{

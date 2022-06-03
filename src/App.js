@@ -5,7 +5,7 @@ function App() {
   const moviesdb = [
     {
       name: "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS",
-      rating: "86%",
+      rating: "86",
       poster:
         "https://resizing.flixster.com/SRkyGZltCSxA5L1j_CF9ILnCrFM=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzJjYjYwMDE3LWI2OTctNDcwOC04NDlmLThmNWU4NWY4NDA2YS5qcGc=",
       summary:
@@ -14,7 +14,7 @@ function App() {
     },
     {
       name: "THE BATMAN",
-      rating: "87%",
+      rating: "87",
       poster:
         "https://i0.wp.com/batman-news.com/wp-content/uploads/2022/01/The-Batman-2022-Sunset-Poster-01.jpeg?fit=2764%2C4096&quality=80&strip=info&ssl=1",
       summary:
@@ -23,7 +23,7 @@ function App() {
     },
     {
       name: "UNCHARTED",
-      rating: "90%",
+      rating: "90",
       poster: "https://flxt.tmsimg.com/assets/p19458781_v_v13_ad.jpg",
       summary:
         "Victor Sullivan recruits Nathan Drake to help him find the lost fortune of Ferdinand Magellan. However, they face competition from Santiago Moncada, who believes that the treasure belongs to him.",
@@ -31,7 +31,7 @@ function App() {
     },
     {
       name: "THE GENTLEMEN",
-      rating: "84%",
+      rating: "84",
       poster:
         "https://resizing.flixster.com/ApAPpZDqepKiMByMbdUo0NrhAr0=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzQzZjMyMThmLTBlMzYtNDcyYy05OGY2LWRlOTUyOTlkYzdkMy53ZWJw",
       summary:
@@ -40,7 +40,7 @@ function App() {
     },
     {
       name: "STAR WARS: THE RISE OF SKYWALKER",
-      rating: "86%",
+      rating: "86",
       poster:
         "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg",
       summary:
@@ -49,7 +49,7 @@ function App() {
     },
     {
       name: "DUNE",
-      rating: "90%",
+      rating: "90",
       poster:
         "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2a5bb2105168471.5f733bb4cec20.jpg",
       summary:
@@ -58,7 +58,7 @@ function App() {
     },
     {
       name: "NO TIME TO DIE ",
-      rating: "88%",
+      rating: "88",
       poster:
         "https://www.heswallhall.co.uk/images/NoTimeToDie_02_Poster-1500x2224.jpg",
       summary:
@@ -83,13 +83,20 @@ function App() {
 
 export default App;
 function MoviesApp({ name, rating, poster, director, summary }) {
+  const styles = {
+    color: rating > 89 ? "green" : "red",
+  };
   return (
     <div className="moviebox">
       <img ClassName="poster" src={poster} alt="movie poster" />
-      <h1 className="moviename">{name}</h1>
-      <h3 className="ratings">Audience Score:🍿 {rating}</h3>
-      <h3 className="director">Director: {director}</h3>
-      <p className="summary">{summary}</p>
+      <div className="moviespecs">
+        <h1 className="moviename">{name}</h1>
+        <h3 style={styles} className="ratings">
+          Audience Score:🍿 {rating}%
+        </h3>
+        <h3 className="director">Director: {director}</h3>
+        <p className="summary">{summary}</p>
+      </div>
     </div>
   );
 }
